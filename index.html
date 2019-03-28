@@ -1,0 +1,72 @@
+<html>
+  <header>
+    <style>
+    * { 
+			font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+    }
+		h2 {
+			margin: 20px;
+      text-decoration: underline overline;
+    }
+    h3 { margin: 30px 0 10px 0; }
+    #slider { margin: 0 auto 70 auto; }
+    input[type=number] {
+      width: 4em;
+      height: 2em;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+    #downloadbtn { font-size: 20px; }
+    #downloadinfo { visibility: hidden; }
+    </style>
+    <link href="./ext/noUiSlider/nouislider.min.css" rel="stylesheet">
+  </header>
+  <body>
+		<!--title-->
+    <h2>Ykob's glitch effect</h2>
+    <a href="https://ykob.github.io/sketch-threejs/">source</a>
+
+    <!--video-->
+		<h3>The original video</h3>
+      Duration : <span id='showdur'>...</span> secs<br/>
+      Size : <span id='showwidth'>...</span> x <span id='showheight'>...</span><br/><br/> 
+      <video id='src-video' width="400" controls>
+      </video>
+      <br/>
+      <small>another?</small> <input id="the-file-input" type="file">
+
+    <!--settings-->
+    <h3>Settings</h3>
+    <p>
+      Glitch from <input type="number" id='glitchstarttime'/> to <input type="number" id='glitchendtime'/>.
+      <small><a id='startnow' href='#'>start now</a></small>
+      <small><a id='endnow' href='#'>end now</a></small>
+    </p>
+    <div id='slider'></div>
+    
+    
+    <!--result-->
+    <h3>The processed one</h3>
+		<canvas id='canvas-webgl' width="400"></canvas>
+    <br/>Time: <span id="showtime">...</span>
+    <br/>Glitching: <span id="showglitchval">...</span>
+
+    <!--download-->
+    <h3>And finally...</h3>
+    <p><button id="downloadbtn">Download !</button></p>
+    <div id='downloadinfo'>
+      <p>Double click on play, the download will happen at the end of the video.</p>
+      <p>After that just refresh</p>
+    </div>
+
+    <!--scripts-->
+    <script src="./ext/CCcapture/CCapture.all.min.js"></script>
+    <script src="./ext/noUiSlider/nouislider.min.js"></script>
+    <script src="./ext/three.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
